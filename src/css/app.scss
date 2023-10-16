@@ -155,6 +155,11 @@
   font-size: 0.5rem;
 }
 
+.pokehover:hover {
+  background-color: #6a67672f;
+  cursor: pointer;
+}
+
 //Media Queries
 
 @media (max-width: 768px) {

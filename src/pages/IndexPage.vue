@@ -68,7 +68,7 @@ const formatNumber = (number) => {
   <div class="q-pa-md q-gutter-md card-container" v-show="showPokemon">
 
     <div v-for=" pokemon in pokemons" :key="pokemon.name">
-      <q-card class="my-card" v-on:click="
+      <q-card class="my-card pokehover" v-on:click="
         getDetails(pokemon.url.split('/')[6])
         ">
         <q-img class="poke-card-img"
