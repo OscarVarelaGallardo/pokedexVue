@@ -23,7 +23,6 @@ const detailsPokemon = ref({})
 
 onMounted(() => {
   id.value = router.currentRoute.value.params.id
-  console.log(id.value)
   getDetailsPokemon(id)
 })
 const getDetailsPokemon = async (id) => {
@@ -44,8 +43,8 @@ const formatNumber = (number) => {
 
     <div class="q-pa-md row items-start q-gutter-md">
       <q-btn label="Regresar " color="primary" @click="router.go(-1)"></q-btn>
-      <q-card class="my-card" v-for=" pokemon in detailsPokemon" :key="pokemon.name" s
-        :style="`background-image:linear-gradient(to right , ${COLORS[pokemon.types[0]?.type.name]} , ${COLORS[pokemon.types[1]?.type.name]} );`">
+      <q-card class="my-card" v-for=" pokemon in detailsPokemon" :key="pokemon.name" s :style="`background-image:linear-gradient(to right , ${COLORS[pokemon.types[0]?.type.name]} , ${COLORS[pokemon.types[1]?.type.name] ? COLORS[pokemon.types[1]?.type.name] : COLORS[pokemon.types[0]?.type.name]
+        } );`">
         <div class="poke-details-card-top">
           <img
             :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`">
